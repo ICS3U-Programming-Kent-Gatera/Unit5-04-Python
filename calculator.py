@@ -4,7 +4,7 @@
 # Does basic math operations using operation signs and user input.
 
 
-def calc_num(a: float, b: float, sign: str) -> float:
+def calculate(a: float, b: float, sign: str) -> float:
 
     # Using a switch case to separate all the equations.
     if sign == "+":
@@ -30,27 +30,27 @@ def main():
     # Error checking...
     try:
         user_num1 = float(input("What is the first number?: "))
-        user_num2 = float(input("What is the second number?: "))
+        user_num2 = float(
+            input("What is the second number?: ")
+        )  #  Calling the calcNum function.
+        ans_num = calculate(sign=oper_sign, a=user_num1, b=user_num2)
+
+        # Output of every case/ operation.
+        if oper_sign == "+":
+            print(f"The sum of {user_num1} and {user_num2} is {ans_num}")
+        elif oper_sign == "-":
+            print(f"The difference of {user_num1} and {user_num2} is {ans_num}")
+        elif oper_sign == "/":
+            print(f"{user_num1} divided by {user_num2} is {ans_num}.")
+        elif oper_sign == "*":
+            print(f"{user_num1} multiplied by {user_num2} is {ans_num}.")
+        elif oper_sign == "%":
+            print(f"{user_num1} modulus by {user_num2} is {ans_num}.")
+        # Error checking for the operation sign.
+        else:
+            print("Invalid operation sign.")
     except:
         print("Invalid number.")
-
-    # // Calling the calcNum function.
-    ans_num = calc_num(sign=oper_sign, a=user_num1, b=user_num2)
-
-    # Output of every case/ operation.
-    if oper_sign == "+":
-        print(f"The sum of {user_num1} and {user_num2} is {ans_num}")
-    elif oper_sign == "-":
-        print(f"The difference of {user_num1} and {user_num2} is {ans_num}")
-    elif oper_sign == "/":
-        print(f"{user_num1} divided by {user_num2} is {ans_num}.")
-    elif oper_sign == "*":
-        print(f"{user_num1} multiplied by {user_num2} is {ans_num}.")
-    elif oper_sign == "%":
-        print(f"{user_num1} modulus by {user_num2} is {ans_num}.")
-    # Error checking for the operation sign.
-    else:
-        print("Invalid operation sign.")
 
 
 # Running the main Function.
